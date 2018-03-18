@@ -12,15 +12,10 @@ $business = new Business("student");
 $user->setBusiness($business);
 echo $user->getName()  . " is " . $user->getBusiness()->getName();
 
-echo "<br><br>";
-
-$user2 = new User("Test2");
-$user2->setNewBusiness("locksmith");
-echo $user2->getName()  . " is " . $user2->getBusiness()->getName();
 
 echo "<br><br>";
 
 $tecaj = new HNBTecaj();
-echo $tecaj->getCourse("USD");
+echo $tecaj->getCurrencyCourse("USD")->getCourse();
 echo "<br><br>";
-echo $tecaj->getCourse("EUR");
+echo $tecaj->getCurrencyCourse("EUR")->getCourse();

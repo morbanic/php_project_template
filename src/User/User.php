@@ -8,33 +8,32 @@ class User {
 	private $name = "Test";
 	private $business = "";
 
-	public function __construct($name = "")
+	public function __debugInfo () {
+       return call_user_func('get_object_vars', $this);
+    }
+
+	public function __construct(string $name = "")
 	{
-		$this->name = $name; 
+		return $this->name = $name; 
 	}
 
-	public function setName($newval)
+	public function setName($newval) : bool
 	{
-		$this->prop1 = $newval;
+		return $this->prop1 = $newval;
 	}
 
-	public function getName()
+	public function getName() : string
 	{
 		return $this->name;
 	}
 
-	public function setBusiness($business)
+	public function setBusiness(Business $business)
 	{
 		$this->business = $business;
 	}
 
-	public function getBusiness()
+	public function getBusiness() : Business
 	{
 		return $this->business;
-	}
-
-	public function setNewBusiness($name)
-	{
-		$this->business = new Business($name);
 	}
 }
